@@ -1,0 +1,64 @@
+{
+  "@context": {
+    "odrl": "http://www.w3.org/ns/odrl/2/"
+  },
+  "@type": "PolicyDefinitionRequestDto",
+  "@id": "example-policy",
+  "policy": {
+    "@type": "odrl:Set",
+    "odrl:permission": [
+      {
+        "odrl:action": {
+          "odrl:type": "USE"
+        },
+        "odrl:constraint": {
+          "@type": "LogicalConstraint",
+          "odrl:and": [
+            {
+              "@type": "Constraint",
+              "odrl:leftOperand": {
+                "@id": "Membership"
+              },
+              "odrl:operator": {
+                "@id": "odrl:eq"
+              },
+              "odrl:rightOperand": "active"
+            },
+            {
+              "@type": "Constraint",
+              "odrl:leftOperand": {
+                "@id": "UsagePurpose"
+              },
+              "odrl:operator": {
+                "@id": "odrl:eq"
+              },
+              "odrl:rightOperand": "non-commercial"
+            }
+          ]
+        }
+      }
+    ],
+    "odrl:prohibition": [
+      {
+        "odrl:action": {
+          "odrl:type": "USE"
+        },
+        "odrl:constraint": {
+          "@type": "LogicalConstraint",
+          "odrl:and": [
+            {
+              "@type": "Constraint",
+              "odrl:leftOperand": {
+                "@id": "purpose"
+              },
+              "odrl:operator": {
+                "@id": "odrl:eq"
+              },
+              "odrl:rightOperand": "http://example.com/music/4567"
+            }
+          ]
+        }
+      }
+    ]
+  }
+}
