@@ -99,5 +99,13 @@ python odrl-parser.py sample-policy.json
 }
 ```
 
+### Output
+
+```json
+Interpretation:
+You are allowed to use the resource. This is allowed if the Membership eq active and the UsagePurpose eq non-commercial. You are prohibited to use the resource. This is prohibited if the purpose eq http://example.com/music/4567.
+
+```
+
 
 
